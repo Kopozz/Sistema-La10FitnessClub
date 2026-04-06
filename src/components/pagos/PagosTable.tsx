@@ -83,9 +83,11 @@ const PagosTable: React.FC = () => {
       </div>
 
       <PagoModal 
+        key={isModalOpen ? 'open' : 'closed'}
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />
+
 
       <ConfirmDialog 
         isOpen={isConfirmOpen}

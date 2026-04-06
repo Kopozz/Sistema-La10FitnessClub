@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useGymStore } from '../../store/gymStore';
 import Modal from '../ui/Modal';
 import type { ClassSession } from '../../types';
@@ -16,38 +16,29 @@ const ClaseModal: React.FC<ClaseModalProps> = ({
   initialData 
 }) => {
   const { addClass, updateClass, entrenadores } = useGymStore();
-  const [formData, setFormData] = useState<Omit<ClassSession, 'id'>>({
-    nombre: '',
-    entrenadorId: '',
-    fechaHora: '',
-    duracion: 60,
-    capacidad: 20,
-    descripcion: '',
-  });
-
-  useEffect(() => {
-    if (!isOpen) return;
-
+  const [formData, setFormData] = useState<Omit<ClassSession, 'id'>>(() => {
     if (initialData) {
-      setFormData({
+      return {
         nombre: initialData.nombre,
         entrenadorId: initialData.entrenadorId,
         fechaHora: initialData.fechaHora,
         duracion: initialData.duracion,
         capacidad: initialData.capacidad,
         descripcion: initialData.descripcion || '',
-      });
-    } else {
-      setFormData({
-        nombre: '',
-        entrenadorId: '',
-        fechaHora: '',
-        duracion: 60,
-        capacidad: 20,
-        descripcion: '',
-      });
+      };
     }
-  }, [initialData, isOpen]);
+    return {
+      nombre: '',
+      entrenadorId: '',
+      fechaHora: '',
+      duracion: 60,
+      capacidad: 20,
+      descripcion: '',
+    };
+  });
+
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

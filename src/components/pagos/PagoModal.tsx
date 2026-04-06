@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useGymStore } from '../../store/gymStore';
 import Modal from '../ui/Modal';
 import type { Payment } from '../../types';
@@ -19,18 +19,7 @@ const PagoModal: React.FC<PagoModalProps> = ({ isOpen, onClose }) => {
     descripcion: '',
   });
 
-  // Reset form when modal opens
-  useEffect(() => {
-    if (isOpen) {
-      setFormData({
-        miembroId: '',
-        monto: 0,
-        fecha: new Date().toISOString().slice(0, 10),
-        metodo: 'efectivo',
-        descripcion: '',
-      });
-    }
-  }, [isOpen]);
+
 
   const handleMemberChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const memberId = e.target.value;

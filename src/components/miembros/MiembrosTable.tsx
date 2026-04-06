@@ -100,10 +100,12 @@ const MiembrosTable: React.FC = () => {
       </div>
 
       <MiembroModal 
+        key={selectedMember?.id || 'new'}
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         initialData={selectedMember} 
       />
+
 
       <ConfirmDialog 
         isOpen={isConfirmOpen}

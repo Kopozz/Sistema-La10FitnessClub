@@ -89,6 +89,7 @@ const EntrenadoresTable: React.FC = () => {
       </div>
 
       <EntrenadorModal 
+        key={selectedTrainer?.id || 'new'}
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         initialData={selectedTrainer} 

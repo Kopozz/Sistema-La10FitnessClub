@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useGymStore } from '../../store/gymStore';
 import Modal from '../ui/Modal';
 import type { Trainer } from '../../types';
@@ -16,35 +16,27 @@ const EntrenadorModal: React.FC<EntrenadorModalProps> = ({
   initialData 
 }) => {
   const { addTrainer, updateTrainer } = useGymStore();
-  const [formData, setFormData] = useState<Omit<Trainer, 'id'>>({
-    nombre: '',
-    email: '',
-    telefono: '',
-    especializacion: '',
-    estado: 'activo',
-  });
-
-  useEffect(() => {
-    if (!isOpen) return;
-
+  const [formData, setFormData] = useState<Omit<Trainer, 'id'>>(() => {
     if (initialData) {
-      setFormData({
+      return {
         nombre: initialData.nombre,
         email: initialData.email,
         telefono: initialData.telefono,
         especializacion: initialData.especializacion,
         estado: initialData.estado,
-      });
-    } else {
-      setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        especializacion: '',
-        estado: 'activo',
-      });
+      };
     }
-  }, [initialData, isOpen]);
+    return {
+      nombre: '',
+      email: '',
+      telefono: '',
+      especializacion: '',
+      estado: 'activo',
+    };
+  });
+
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -103,10 +103,12 @@ const ClasesTable: React.FC = () => {
       </div>
 
       <ClaseModal 
+        key={selectedClass?.id || 'new'}
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         initialData={selectedClass} 
       />
+
 
       <ConfirmDialog 
         isOpen={isConfirmOpen}

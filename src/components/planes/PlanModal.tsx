@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useGymStore } from '../../store/gymStore';
 import Modal from '../ui/Modal';
 import type { Plan } from '../../types';
@@ -16,32 +16,25 @@ const PlanModal: React.FC<PlanModalProps> = ({
   initialData 
 }) => {
   const { addPlan, updatePlan } = useGymStore();
-  const [formData, setFormData] = useState<Omit<Plan, 'id'>>({
-    nombre: '',
-    duracion: 1,
-    precio: 0,
-    descripcion: '',
-  });
-
-  useEffect(() => {
-    if (!isOpen) return;
-
+  const [formData, setFormData] = useState<Omit<Plan, 'id'>>(() => {
     if (initialData) {
-      setFormData({
+      return {
         nombre: initialData.nombre,
         duracion: initialData.duracion,
         precio: initialData.precio,
         descripcion: initialData.descripcion || '',
-      });
-    } else {
-      setFormData({
-        nombre: '',
-        duracion: 1,
-        precio: 0,
-        descripcion: '',
-      });
+      };
     }
-  }, [initialData, isOpen]);
+    return {
+      nombre: '',
+      duracion: 1,
+      precio: 0,
+      descripcion: '',
+    };
+  });
+
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

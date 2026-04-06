@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useGymStore } from '../../store/gymStore';
 import Modal from '../ui/Modal';
 import type { Member } from '../../types';
@@ -16,22 +16,9 @@ const MiembroModal: React.FC<MiembroModalProps> = ({
   initialData 
 }) => {
   const { addMember, updateMember, planes } = useGymStore();
-  const [formData, setFormData] = useState<Omit<Member, 'id'>>({
-    nombre: '',
-    email: '',
-    telefono: '',
-    contactoEmergencia: '',
-    planId: '',
-    fechaInicio: '',
-    fechaFin: '',
-    estado: 'activo',
-  });
-
-  useEffect(() => {
-    if (!isOpen) return;
-
+  const [formData, setFormData] = useState<Omit<Member, 'id'>>(() => {
     if (initialData) {
-      setFormData({
+      return {
         nombre: initialData.nombre,
         email: initialData.email,
         telefono: initialData.telefono,
@@ -40,20 +27,22 @@ const MiembroModal: React.FC<MiembroModalProps> = ({
         fechaInicio: initialData.fechaInicio,
         fechaFin: initialData.fechaFin,
         estado: initialData.estado,
-      });
-    } else {
-      setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        contactoEmergencia: '',
-        planId: '',
-        fechaInicio: '',
-        fechaFin: '',
-        estado: 'activo',
-      });
+      };
     }
-  }, [initialData, isOpen]);
+    return {
+      nombre: '',
+      email: '',
+      telefono: '',
+      contactoEmergencia: '',
+      planId: '',
+      fechaInicio: '',
+      fechaFin: '',
+      estado: 'activo',
+    };
+  });
+
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

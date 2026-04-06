@@ -14,8 +14,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Close sidebar when navigating on mobile
   useEffect(() => {
-    setIsSidebarOpen(false);
-  }, [location.pathname]);
+    if (isSidebarOpen) {
+      setTimeout(() => setIsSidebarOpen(false), 0);
+    }
+  }, [location.pathname, isSidebarOpen]);
+
+
+
 
   // Prevent scroll when sidebar is open on mobile
   useEffect(() => {

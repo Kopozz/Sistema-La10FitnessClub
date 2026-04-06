@@ -90,10 +90,12 @@ const PlanesGrid: React.FC = () => {
       </div>
 
       <PlanModal 
+        key={selectedPlan?.id || 'new'}
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         initialData={selectedPlan} 
       />
+
 
       <ConfirmDialog 
         isOpen={isConfirmOpen}
