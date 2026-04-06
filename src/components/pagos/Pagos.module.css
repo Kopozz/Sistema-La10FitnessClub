@@ -45,3 +45,18 @@
   font-weight: 700;
   color: var(--text-white);
 }
+
+@media (max-width: 640px) {
+  .totalCard {
+    padding: 16px;
+  }
+  
+  .totalValue {
+    font-size: 24px;
+  }
+  
+  .iconContainer {
+    width: 40px;
+    height: 40px;
+  }
+}

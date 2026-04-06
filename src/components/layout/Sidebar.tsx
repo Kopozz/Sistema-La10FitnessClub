@@ -9,11 +9,17 @@ import {
   CheckCircle, 
   CreditCard, 
   Settings,
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const logout = useAuthStore((state) => state.logout);
   const navigate = useNavigate();
 
@@ -30,14 +36,22 @@ const Sidebar: React.FC = () => {
   const handleLogout = () => {
     logout();
     navigate('/login');
+    if (onClose) onClose();
   };
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
       <div className={styles.logoContainer}>
-        <div className={styles.logoText}>
-          <span className={styles.logoLa}>LA 10</span>
-          <span className={styles.logoFc}>FITNESS CLUB</span>
+        <div className={styles.headerRow}>
+          <div className={styles.logoText}>
+            <span className={styles.logoLa}>LA 10</span>
+            <span className={styles.logoFc}>FITNESS CLUB</span>
+          </div>
+          {isOpen && (
+            <button className={styles.closeButton} onClick={onClose}>
+              <X size={24} />
+            </button>
+          )}
         </div>
         <div className={styles.rainbowLine} />
       </div>
@@ -74,4 +88,3 @@ const Sidebar: React.FC = () => {
 };
 
 export default Sidebar;
-

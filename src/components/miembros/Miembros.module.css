@@ -10,6 +10,7 @@
   margin-bottom: 32px;
   border-bottom: 1px solid var(--border-zinc);
   padding-bottom: 20px;
+  gap: 16px;
 }
 
 .title {
@@ -41,6 +42,7 @@
   cursor: pointer;
   transition: all 0.2s;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 .addBtn:hover {
@@ -57,12 +59,14 @@
 
 .tableWrapper {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  min-width: 800px; /* Force scroll on mobile */
 }
 
 .table th {
@@ -130,4 +134,21 @@
   text-align: center;
   padding: 60px !important;
   color: var(--text-zinc-600);
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .addBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 24px;
+  }
 }

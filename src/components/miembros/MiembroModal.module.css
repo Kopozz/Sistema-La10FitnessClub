@@ -90,3 +90,20 @@
   background-color: #2563eb;
   transform: translateY(-1px);
 }
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .footer {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+  
+  .cancelBtn, .saveBtn {
+    width: 100%;
+    padding: 12px;
+  }
+}

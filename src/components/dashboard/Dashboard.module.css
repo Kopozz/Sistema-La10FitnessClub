@@ -24,7 +24,7 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-bottom: 32px;
 }
@@ -46,12 +46,14 @@
 
 .tableWrapper {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  min-width: 600px;
 }
 
 .table th {
@@ -84,4 +86,24 @@
   text-align: center;
   padding: 40px !important;
   color: var(--text-zinc-600);
+}
+
+@media (max-width: 1200px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .recentPanel {
+    padding: 16px;
+  }
 }
