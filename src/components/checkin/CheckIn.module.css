@@ -1,0 +1,191 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-zinc);
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  color: var(--text-white);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-zinc-600);
+  margin-top: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.searchPanel, .recentPanel {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-zinc);
+  border-radius: var(--radius-sharp);
+  padding: 24px;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--text-white);
+  margin-bottom: 24px;
+}
+
+.searchContainer {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-zinc-600);
+}
+
+.searchInput {
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-zinc);
+  color: var(--text-white);
+  padding: 12px 12px 12px 40px;
+  border-radius: var(--radius-sharp);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.searchInput:focus {
+  border-color: var(--accent-blue);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.memberCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-zinc);
+  border-radius: var(--radius-sharp);
+  transition: all 0.2s ease;
+}
+
+.memberCard:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-zinc-600);
+}
+
+.memberInfo {
+  flex: 1;
+}
+
+.memberName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 2px;
+}
+
+.memberEmail {
+  font-size: 12px;
+  color: var(--text-zinc-600);
+}
+
+.checkInBtn {
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sharp);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.checkInBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.emptySearch {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-zinc-600);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.emptyIcon {
+  opacity: 0.2;
+}
+
+.noResults {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-zinc-600);
+  font-size: 14px;
+}
+
+.checkinList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checkinItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+}
+
+.checkinItem:last-child {
+  border-bottom: none;
+}
+
+.ciName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 2px;
+}
+
+.ciDate {
+  font-size: 12px;
+  color: var(--text-zinc-600);
+}
+
+.ciTime {
+  font-size: 12px;
+  color: var(--accent-yellow);
+  font-weight: 700;
+  padding: 4px 8px;
+  background-color: rgba(234, 179, 8, 0.1);
+  border-radius: 4px;
+}

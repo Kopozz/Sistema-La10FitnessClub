@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message {
+  font-size: 14px;
+  color: var(--text-zinc-400);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelBtn {
+  background: none;
+  border: 1px solid var(--border-zinc);
+  color: var(--text-zinc-400);
+  padding: 8px 16px;
+  border-radius: var(--radius-sharp);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+  border-color: var(--text-white);
+  color: var(--text-white);
+}
+
+.confirmBtn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sharp);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary {
+  background-color: var(--accent-blue);
+  color: white;
+}
+
+.primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.danger {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+.danger:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}

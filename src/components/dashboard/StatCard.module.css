@@ -1,0 +1,58 @@
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-zinc);
+  border-radius: var(--radius-sharp);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--text-zinc-600);
+  background-color: rgba(255, 255, 255, 0.01);
+  transform: translateY(-2px);
+}
+
+.iconContainer {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sharp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red { background-color: rgba(239, 68, 68, 0.1); color: var(--accent-red); }
+.blue { background-color: rgba(59, 130, 246, 0.1); color: var(--accent-blue); }
+.yellow { background-color: rgba(234, 179, 8, 0.1); color: var(--accent-yellow); }
+.green { background-color: rgba(34, 197, 94, 0.1); color: var(--accent-green); }
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-zinc-600);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.subValue {
+  font-size: 11px;
+  color: var(--accent-green);
+  font-weight: 600;
+}

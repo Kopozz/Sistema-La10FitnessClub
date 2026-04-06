@@ -1,0 +1,47 @@
+.totalCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-zinc);
+  border-radius: var(--radius-sharp);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.totalInfo {
+  flex: 1;
+}
+
+.totalTitle {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-zinc-600);
+  margin-bottom: 4px;
+}
+
+.totalValue {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--text-white);
+  line-height: 1;
+}
+
+.montoCell {
+  font-weight: 700;
+  color: var(--text-white);
+}

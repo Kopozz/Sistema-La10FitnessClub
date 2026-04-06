@@ -1,0 +1,15 @@
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-zinc-400);
+  font-size: 13px;
+}
+
+.icon {
+  color: var(--text-zinc-600);
+}
+
+.minHeight {
+  min-height: 100px;
+}
